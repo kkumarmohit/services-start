@@ -38,3 +38,7 @@ In angular there are broadly three levels of injection of services:
 3: Single component (with no child component): A separate instance will be provide to the specific component.
 
 The instances always propogates downward in angular.
+
+## Injecting services into a service
+In older version of angular, @Injectable decorator is used on the service which will itself expect an another service to be injected. No need of decorator on child service
+In newer version of angular, @Injectable can be used on either parent or child service.
