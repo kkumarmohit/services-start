@@ -30,3 +30,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 A service can help to share some common data, implement some common functionality across classes.
 To inject a service based on DI pattern, we simply need to provide the service type in "provider" attribute of a component which intends to use that service and
 add a property in the construtor of the component to hold the instance of the service.
+
+## Hierarichical Injector
+In angular there are broadly three levels of injection of services:
+1: AppModule: Same instance of service is available appication wide
+2: AppComponent: Same instance of service is available for app component and all its child component (but not for other services)
+3: Single component (with no child component): A separate instance will be provide to the specific component.
+
+The instances always propogates downward in angular.
