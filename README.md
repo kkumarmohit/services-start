@@ -43,3 +43,25 @@ The instances always propogates downward in angular.
 ## Injecting services into a service
 In older version of angular, @Injectable decorator is used on the service which will itself expect an another service to be injected. No need of decorator on child service
 In newer version of angular, @Injectable can be used on either parent or child service.
+
+## Note
+
+Instead of adding a service class to the providers[]  array in AppModule , you can set the following config in @Injectable() :
+
+@Injectable({providedIn: 'root'})
+export class MyService { ... }
+
+This is exactly the same as:
+
+export class MyService { ... }
+and
+
+import { MyService } from './path/to/my.service';
+ 
+@NgModule({
+    ...
+    providers: [MyService]
+})
+export class AppModule { ... }
+
+This has an advantage of lazy loading.
